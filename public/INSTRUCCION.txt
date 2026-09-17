@@ -1,15 +1,22 @@
-Estamos en https://github.com/carlox2/asis-90
-La respuesta es correcta pero conté hasta 100 (aprox. en segundos) y respondió asi (no llegó a leer lo poco que respondió). Tambien me pasa que responde en textmark y cuando lee dice "asterisco asterico asterisco" etc. Además el formato de salida debe ser otro. Debería responder (en este caso la pregunta era verdadero o falso: "Opción correcta: a) Verdadero
-¿Por qué es la correcta?: Los adultos con afasia de Broca presentan tanto incapacidad para producir discursos organizados sintácticamente como fallas similares en la manipulación de objetos. Esto respalda la teoría de que la manufactura de herramientas y la producción del lenguaje comparten mecanismos neurales evolutivos y bases cognitivas comunes.
+INSTRUCCIONES DE USO — Asistente 577a
+=====================================================
 
- Tres cosas para arreglar en este pase:
+[ PENDIENTE ]
 
-1.
-TTS dice "asterisco asterisco": Gemini te devuelve texto con markdown (**negrita**, etc.) y speechSynthesis lo lee literal. Hay que limpiar el markdown antes de pasarlo a la voz y a la pantalla.
-2.
-Respuesta muy corta / tarda 100 s: probablemente GEMINI_MODEL = "gemini-3.6-flash" no es un modelo válido de Google y el SDK está renegando, o estás chocando el rate limit. Lo cambio a gemini-2.0-flash y le subo el maxOutputTokens para que la salida no se trunque.
-3.
-Formato de salida: rehago el SYSTEM_PROMPT con el formato que pediste (sin markdown, separado por ;).
-Antes de tocar el SYSTEM_PROMPT te confirmo el formato general, porque lo que me pasaste sirve para multiple choice pero la app también recibe preguntas abiertas tipo "explicame X".
+Este archivo documentaba instrucciones para los alumnos en la
+versión anterior (LAAV). Reemplazarlo por las instrucciones de
+577a cuando estén listas.
 
-gemini-3.6-flash SÍ ES UN MODELO VALIDO DE GOOGLE; AUNQUE HABRÍA QUE CAMBIARLO A "ULTIMATE" PARA NO TENER PROBLEMAS
+Formato sugerido:
+
+  · Materia: [nombre]
+  · Carrera: [carrera / facultad]
+  · Cátedra: [cátedra y docente]
+  · Cuatrimestre: [cuatrimestre y año]
+  · Qué hace este tutor: [1-2 líneas]
+  · Cómo se usa: [pasos cortos]
+  · Atajos: [si hay]
+  · Avisos: [lo que el alumno tiene que saber]
+
+Este archivo NO se carga en runtime; es solo referencia humana
+para quien abra el repo o el deploy.

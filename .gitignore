@@ -26,3 +26,6 @@ Thumbs.db
 
 # Scratch local (carpeta usada por Mavis durante typecheck/reparación)
 .scratch/
+
+# Backups de material de LAAV preservados localmente (no se commitean)
+*.LAAV-BACKUP

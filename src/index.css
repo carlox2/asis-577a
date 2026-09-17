@@ -1,31 +1,29 @@
 ﻿@import "tailwindcss";
 
 /* ============================================================
-   LAAV · Hoja de estilos base
-   Paleta celeste cyan: fondo azul-petróleo profundo con texto
-   en celeste claro. Estética de bitácora nocturna, sin grises
+   577a · Hoja de estilos base
+   Paleta violeta profunda: fondo noche-violeta con texto
+   lavanda claro. Estética de bitácora nocturna, sin grises
    neutros.
    ============================================================ */
 
 :root {
-  /* Fondo: azul-petróleo muy oscuro, casi nocturno cyan */
-  --bg: #062933;
+  /* Fondo: violeta muy oscuro, casi nocturno */
+  --bg: #1a0b2e;
   /* Paneles: un escalón más claro que el fondo para que destaquen */
-  --panel: #0a3a49;
-  --panel-2: #0a3a49;
-  /* Bordes: cyan medio, usados con baja opacidad en el markup */
-  --line: #155e75;
-  /* Texto principal: celeste CLARO — sustituye al rosa
-     anterior para que toda la página se vea en la misma familia
-     cromática */
-  --ink: #d9f6ff;
+  --panel: #241339;
+  --panel-2: #241339;
+  /* Bordes: violeta medio, usados con baja opacidad en el markup */
+  --line: #5b21b6;
+  /* Texto principal: lavanda CLARO */
+  --ink: #f5f3ff;
   /* Texto secundario / labels, un poco más oscuro para jerarquía */
-  --mut: #7dd3e8;
-  /* Acentos cyan celeste (sustitutos del antiguo fucsia) */
-  --violet: #a5f3fc;
-  --fuchsia: #22d3ee;
-  --indigo: #0e7490;
-  --pink: #38bdf8;
+  --mut: #c4b5fd;
+  /* Acentos violetas */
+  --violet: #ddd6fe;
+  --fuchsia: #a855f7;
+  --indigo: #6d28d9;
+  --pink: #a78bfa;
 }
 
 html,
@@ -47,21 +45,21 @@ body {
 }
 
 ::selection {
-  background: rgba(34, 211, 238, 0.32);
-  color: #062933;
+  background: rgba(168, 85, 247, 0.32);
+  color: #1a0b2e;
 }
 
-/* Scrollbar discreto (en tonos cyan) */
+/* Scrollbar discreto (en tonos violeta) */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #155e75 transparent;
+  scrollbar-color: #5b21b6 transparent;
 }
 *::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 *::-webkit-scrollbar-thumb {
-  background: #155e75;
+  background: #5b21b6;
   border-radius: 8px;
 }
 
@@ -72,9 +70,9 @@ body {
   z-index: -1;
   overflow: hidden;
   background:
-    radial-gradient(1100px 600px at 12% -8%, rgba(165, 243, 252, 0.07), transparent 60%),
-    radial-gradient(900px 560px at 92% 108%, rgba(34, 211, 238, 0.07), transparent 60%),
-    radial-gradient(700px 420px at 70% 20%, rgba(56, 189, 248, 0.05), transparent 60%),
+    radial-gradient(1100px 600px at 12% -8%, rgba(196, 181, 253, 0.07), transparent 60%),
+    radial-gradient(900px 560px at 92% 108%, rgba(168, 85, 247, 0.07), transparent 60%),
+    radial-gradient(700px 420px at 70% 20%, rgba(167, 139, 250, 0.05), transparent 60%),
     var(--bg);
 }
 .gem-bg::before {
@@ -82,8 +80,8 @@ body {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(165, 243, 252, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(165, 243, 252, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(196, 181, 253, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(196, 181, 253, 0.03) 1px, transparent 1px);
   background-size: 44px 44px;
   mask-image: radial-gradient(ellipse 90% 80% at 50% 20%, #000 40%, transparent 100%);
 }
@@ -99,14 +97,14 @@ body {
   height: 480px;
   left: -140px;
   top: -160px;
-  background: rgba(34, 211, 238, 0.14);
+  background: rgba(168, 85, 247, 0.14);
 }
 .gem-bg .drift-b {
   width: 420px;
   height: 420px;
   right: -120px;
   bottom: -140px;
-  background: rgba(56, 189, 248, 0.13);
+  background: rgba(167, 139, 250, 0.13);
   animation-delay: -12s;
 }
 @keyframes drift {
@@ -118,9 +116,9 @@ body {
 
 /* Anillo de grabación activa: brillo suave que respira (Botón 1) */
 @keyframes rec-pulse {
-  0%   { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.45); }
-  70%  { box-shadow: 0 0 0 14px rgba(34, 211, 238, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
+  0%   { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.45); }
+  70%  { box-shadow: 0 0 0 14px rgba(168, 85, 247, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0); }
 }
 .rec-pulse {
   animation: rec-pulse 1.6s ease-out infinite;
@@ -313,7 +311,7 @@ header {
 
 .error-box {
   border-left: 3px solid var(--violet);
-  background: rgba(34, 211, 238, 0.08);
+  background: rgba(168, 85, 247, 0.08);
   color: var(--ink);
   padding: 1rem;
   border-radius: 4px;
@@ -337,8 +335,8 @@ header {
 @media (max-width: 768px) {
   .gem-bg {
     background:
-      radial-gradient(800px 500px at 20% -10%, rgba(165, 243, 252, 0.07), transparent 50%),
-      radial-gradient(600px 400px at 80% 90%, rgba(34, 211, 238, 0.06), transparent 50%),
+      radial-gradient(800px 500px at 20% -10%, rgba(196, 181, 253, 0.07), transparent 50%),
+      radial-gradient(600px 400px at 80% 90%, rgba(168, 85, 247, 0.06), transparent 50%),
       var(--bg);
   }
 }

@@ -12,9 +12,9 @@
  *
  * El token sale del build (Secrets → Actions → VITE_GITHUB_TOKEN).
  * El docente no pega nada en la app: el guardado es totalmente automático.
- *  - VITE_GITHUB_REPO:     "owner/repo" (default: "carlox2/asis-laav")
+ *  - VITE_GITHUB_REPO:     "owner/repo" (default: "carlox2/asis-577a")
  *  - VITE_QA_LOGS_DIR:     carpeta destino (default: "qa-logs")
- *  - VITE_QA_LOG_PREFIX:   prefijo del archivo (default: "asis-laav")
+ *  - VITE_QA_LOG_PREFIX:   prefijo del archivo (default: "asis-577a")
  *  - VITE_QA_LOGS_BRANCH:  rama destino (default: "main")
  *
  * IMPORTANTE: las vars VITE_* quedan visibles en el JS compilado.
@@ -46,7 +46,7 @@ function env(key: string): string {
 
 export function isQALogEnabled(): boolean {
   const token = env("VITE_GITHUB_TOKEN");
-  const repo = env("VITE_GITHUB_REPO") || "carlox2/asis-laav";
+  const repo = env("VITE_GITHUB_REPO") || "carlox2/asis-577a";
   if (!token || !repo.includes("/")) return false;
   if (env("VITE_QA_LOGS_ENABLED") === "0") return false;
   return true;
@@ -56,9 +56,9 @@ function pad(n: number): string {
   return String(n).padStart(2, "0");
 }
 
-/** Prefijo-Fecha: asis-laav-2026-09-06-20-25-39.txt (igual patrón que Image 2). */
+/** Prefijo-Fecha: asis-577a-2026-09-06-20-25-39.txt */
 export function buildQALogFilename(now = new Date()): string {
-  const prefix = env("VITE_QA_LOG_PREFIX") || "asis-laav";
+  const prefix = env("VITE_QA_LOG_PREFIX") || "asis-577a";
   const stamp = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}-${pad(now.getHours())}-${pad(now.getMinutes())}-${pad(now.getSeconds())}`;
   return `${prefix}-${stamp}.txt`;
 }
@@ -79,7 +79,7 @@ function formatDurationShort(ms?: number): string | null {
 /**
  * Formato del txt (idéntico al histórico de qa-logs):
  *
- *   asis-laav · 6/9/2026, 20:25:39 · 0:42
+ *   asis-577a · 6/9/2026, 20:25:39 · 0:42
  *   ============================================================
  *   PREGUNTA:
  *   <transcripción literal>
@@ -91,7 +91,7 @@ function formatDurationShort(ms?: number): string | null {
  * Sin metadata ni campos extra: solo pregunta y respuesta.
  */
 function buildQALogBody(p: QALogPayload, now = new Date()): string {
-  const prefix = env("VITE_QA_LOG_PREFIX") || "asis-laav";
+  const prefix = env("VITE_QA_LOG_PREFIX") || "asis-577a";
   const dateStr = now.toLocaleString("es-AR");
   const tail =
     formatDurationShort(p.durationMs) ??
@@ -124,7 +124,7 @@ export async function saveQALogBackground(payload: QALogPayload): Promise<void> 
   try {
     if (!payload?.answer?.trim()) return;
     const token = env("VITE_GITHUB_TOKEN");
-    const repo = env("VITE_GITHUB_REPO") || "carlox2/asis-laav";
+    const repo = env("VITE_GITHUB_REPO") || "carlox2/asis-577a";
     if (!token || !repo.includes("/")) return; // no configurado → silencioso
 
     const dir = (env("VITE_QA_LOGS_DIR") || "qa-logs").replace(/^\/+|\/+$/g, "");
