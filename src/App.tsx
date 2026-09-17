@@ -1,5 +1,5 @@
 ﻿/* ============================================================
-   LAAV
+   577a
    ------------------------------------------------------------
    Consola de estudio 100% frontend (paleta violeta):
 
@@ -1144,7 +1144,7 @@ export default function App() {
       {/* ---------- Encabezado ---------- */}
       <header className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 pb-4 pt-6 sm:px-6">
         <h1 className="font-display text-2xl font-bold tracking-[0.18em] text-[#f5f3ff] sm:text-3xl">
-          LAAV
+          577a
         </h1>
         <div className="flex items-center gap-2">
           <span
